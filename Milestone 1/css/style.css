@@ -28,7 +28,8 @@ body {
 
 .chat-menu {
   width: 35%;
-  background-color: burlywood;
+  background-color: white;
+  border-right: 1px solid #dadbd3;
 }
 
 .header {
@@ -81,6 +82,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
 .notification a{
@@ -110,24 +112,72 @@ body {
   cursor: pointer;
 }
 
-.chats-container {
+.search-icon:active {
+background-color: rgba(0, 0, 0, 0.03);
+}
+
+.chats-wrapper {
+  display: flex;
   height: calc(100% - 198px);
-  background-color: yellow;
+}
+
+.chats-container {
+  width: calc(100% - 15px);
+  height: 100%;
   overflow-y: auto;
 }
 
+.scrollbar {
+  color: #b1b1b1;
+  background-color: #f1f1f1;
+  position: relative;
+  width: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.scrollbar i {
+  font-size: 0.8rem;
+}
+
 .chat-row {
+  width: 100%;
   padding: 10px;
-  background-color: #ffffff;
   border-bottom: 1px solid #e9ebeb;
   display: flex;
-  align-items: center;
+  position: relative;
+  cursor: pointer;
 }
 
 .chat-row .avatar {
   margin-left: 5px;
 }
 
+.chat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.msg-preview, .msg-time {
+  color: #b1b1b1;
+  font-size: 00.8rem;
+} 
+
+.msg-time {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
 .conversation {
   background-color: cadetblue;
+  width: 65%;
+  background-image: url(../img/mine.jpg);
+}
+
+.active {
+  background-color: #e9ebeb;
 }

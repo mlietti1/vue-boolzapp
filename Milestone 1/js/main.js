@@ -3,6 +3,7 @@ const {createApp} = Vue;
 createApp({
   data(){
     return{
+      chatCounter: 0,
       user: 
       {
         name: 'Cristina',

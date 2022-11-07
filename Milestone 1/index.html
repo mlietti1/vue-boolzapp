@@ -41,15 +41,32 @@
         </div>
         <input type="text" placeholder="Cerca o inizia una nuova chat" name="search" id="search">
       </div>
-      <div class="chats-container">
-        <div v-for="contact in contacts" class="chat-row">
-          <img class="avatar" :src="'img/avatar' + contact.avatar + '.jpg'" alt="contact.name">
-          <div></div>
+      <div class="chats-wrapper">
+        <div class="chats-container">
+          <div @click="chatCounter = index" :class="{'active': index === chatCounter}" v-for="(contact, index) in contacts" class="chat-row">
+            <img class="avatar" :src="'img/avatar' + contact.avatar + '.jpg'" alt="contact.name">
+            <div class="chat-info">
+              <span>{{contact.name}}</span>
+              <span class="msg-preview">Ultimo messaggio inviato</span>
+            </div>
+            <div class="msg-time">12:00</div>
+          </div>
+        </div>
+
+        <div class="scrollbar">
+          <i class="fa-solid fa-caret-up"></i>
+          <i class="fa-solid fa-caret-down"></i>
         </div>
       </div>
+      
     </div>
     <div class="conversation">
-
+      <div class="header">
+        <div class="user-info">
+          <img class="avatar" :src="'img/avatar' + contacts[chatCounter].avatar + '.jpg'" :alt="contacts[chatCounter].name">
+          <span>{{contacts[chatCounter].name}}</span>
+        </div>
+      </div>
     </div>
   </div>
 
