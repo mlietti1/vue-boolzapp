@@ -26,6 +26,27 @@
           <i class="fa-solid fa-ellipsis-vertical"></i>
         </div>
       </div>
+      <div class="notification">
+        <div class="avatar">
+          <i class="fa-solid fa-bell-slash"></i>
+        </div>
+        <div class="notification-text">
+          <p>Ricevi notifiche di nuovi messaggi</p>
+          <a href="#">Attiva notifiche desktop</a>
+        </div>
+      </div>
+      <div class="searchbar">
+        <div class="search-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <input type="text" placeholder="Cerca o inizia una nuova chat" name="search" id="search">
+      </div>
+      <div class="chats-container">
+        <div v-for="contact in contacts" class="chat-row">
+          <img class="avatar" :src="'img/avatar' + contact.avatar + '.jpg'" alt="contact.name">
+          <div></div>
+        </div>
+      </div>
     </div>
     <div class="conversation">
 
