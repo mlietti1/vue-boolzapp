@@ -31,6 +31,40 @@ body {
   background-color: burlywood;
 }
 
+.header {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaeaea;
+}
+
+.header img.avatar {
+  height: 40px;
+  width: 40px;
+}
+
+img.avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-menu {
+  color: #b1b1b1;
+}
+
+.user-menu i {
+  margin-left: 15px;
+}
+
 .conversation {
   background-color: cadetblue;
 }
