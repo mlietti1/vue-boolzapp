@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    #009688 0%,
+    #009688 15%,
+    #dadbd3 15%,
+    #dadbd3 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 85%;
+  min-height: 95vh;
+  background-color: brown;
+  display: flex;
+}
+
+.chat-menu {
+  width: 35%;
+  background-color: burlywood;
+}
+
+.conversation {
+  background-color: cadetblue;
+}
