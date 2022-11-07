@@ -64,8 +64,28 @@
       <div class="header">
         <div class="user-info">
           <img class="avatar" :src="'img/avatar' + contacts[chatCounter].avatar + '.jpg'" :alt="contacts[chatCounter].name">
-          <span>{{contacts[chatCounter].name}}</span>
+          <div class="conversation-info">
+            <span>{{contacts[chatCounter].name}}</span>
+            <span class="last-seen">Ultimo accesso oggi alle 12:00</span>
+          </div>
         </div>
+      </div>
+      <div class="convo-container">
+        <div v-for="(text, index) in contacts[chatCounter].messages" :class="{'justify-end': text.status == 'sent'}" class="msg-row">
+          <div :class="{'sent': text.status == 'sent'}" class="msg-box">
+            <p>{{text.message}}</p>
+          </div>
+        </div>
+        <!-- <div class="msg-row justify-end">
+          <div class="msg-box sent">
+            <p>Lorem ipsum dolor.</p>
+          </div>
+        </div> -->
+      </div>
+      <div class="chat-input">
+        <div></div>
+        <input placeholder="Scrivi un messaggio" type="text" name="" id="">
+        <div></div>
       </div>
     </div>
   </div>
