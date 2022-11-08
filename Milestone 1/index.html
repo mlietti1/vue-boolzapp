@@ -48,7 +48,7 @@
             <span>{{contact.name}}</span>
             <span class="msg-preview">Ultimo messaggio inviato</span>
           </div>
-          <div class="msg-time">12:00</div>
+          <div class="chat-time">12:00</div>
         </div>
       </div>
       
@@ -67,13 +67,14 @@
         <div v-for="(text, index) in contacts[chatCounter].messages" :class="{'justify-end': text.status == 'sent'}" class="msg-row">
           <div :class="{'sent': text.status == 'sent'}" class="msg-box">
             <p>{{text.message}}</p>
+            <span class="msg-time">12:00</span>
           </div>
         </div>
       </div>
       <div class="chat-input">
-        <div></div>
+        <div><i class="fa-regular fa-face-smile"></i></div>
         <input placeholder="Scrivi un messaggio" type="text" name="" id="">
-        <div></div>
+        <div><i class="fa-solid fa-microphone"></i></div>
       </div>
     </div>
   </div>

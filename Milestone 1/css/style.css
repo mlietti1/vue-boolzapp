@@ -97,13 +97,15 @@ body {
 }
 
 .searchbar input {
-  width: 100%;
+  width: 85%;
   border: 1px solid #e9ebeb;
   padding: 8px 10px;
 }
 
 .search-icon {
-  padding: 8px 20px;
+  width: 15%;
+  padding: 8px 0;
+  text-align: center;
   color: #b1b1b1;
   background-color: white;
   border-top: 1px solid #e9ebeb;
@@ -142,19 +144,22 @@ background-color: rgba(0, 0, 0, 0.03);
   flex-direction: column;
 }
 
-.msg-preview, .msg-time {
+.msg-preview, .chat-time, .msg-time {
   color: #b1b1b1;
-  font-size: 00.8rem;
+  font-size: 0.8rem;
 } 
 
-.msg-time {
+.msg-preview {
+  line-height: 1.2rem;
+}
+
+.chat-time {
   position: absolute;
   right: 10px;
   top: 10px;
 }
 
 .conversation {
-  overflow-y: scroll;
   background-color: cadetblue;
   width: 65%;
   background-image: url(../img/mine.jpg);
@@ -173,14 +178,15 @@ background-color: rgba(0, 0, 0, 0.03);
 }
 
 .chat-input {
-  padding: 10px;
+  display: flex;
+  padding: 10px 0;
   background-color: #f4eee9;
   width: 100%;
 }
 
 .convo-container {
   height: calc(100% - 120.5px);
-  overflow: auto;
+  overflow-y: scroll;
   padding-top: 30px;
   padding-left: 50px;
   padding-right: 50px;
@@ -198,6 +204,7 @@ background-color: rgba(0, 0, 0, 0.03);
   max-width: calc(80%);
   border-radius: 7px;
   background-color: white;
+  position: relative;
 }
 
 .msg-box.sent {
@@ -212,10 +219,23 @@ background-color: rgba(0, 0, 0, 0.03);
   padding: 10px 10px;
   border-radius: 3px;
   border: none;
-  width: 100%;
+  width: 86%;
+}
+
+.chat-input div {
+  padding: 10px 0;
+  text-align: center;
+  width: 7%;
+  color: #6B7377;
 }
 
 .active {
   background-color: #e9ebeb;
 }
 
+.msg-time {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 0.6rem;
+}
