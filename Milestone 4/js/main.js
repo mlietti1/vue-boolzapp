@@ -185,6 +185,11 @@ createApp({
         status: 'sent'
       }
       this.contacts[index].messages.push(newMsg);
+      
+      setTimeout(() => {
+        this.autoScroll();
+      }, 10);
+
       this.newMsgString = '';
       this.autoreply = setTimeout(() => {
         const newReply = {
@@ -193,7 +198,11 @@ createApp({
           status: 'received'
         }
         this.contacts[index].messages.push(newReply);
+        setTimeout(() => {
+          this.autoScroll();
+        }, 10);
       }, 1000);
+      
     },
     
     searchContact(){
@@ -204,6 +213,11 @@ createApp({
           contact.visible = true;
         }
       })
+    },
+
+    autoScroll(){
+      const convoContainer = document.getElementById('chat');
+      convoContainer.scrollTop = convoContainer.scrollHeight;
     }
     
     

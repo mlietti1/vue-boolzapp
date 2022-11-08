@@ -63,7 +63,7 @@
           </div>
         </div>
       </div>
-      <div class="convo-container">
+      <div id="chat" class="convo-container">
         <div v-for="(text, index) in contacts[chatCounter].messages" :class="{'justify-end': text.status == 'sent'}" class="msg-row">
           <div :class="{'sent': text.status == 'sent'}" class="msg-box">
             <p>{{text.message}}</p>
