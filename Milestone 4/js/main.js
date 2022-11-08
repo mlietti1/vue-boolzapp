@@ -195,7 +195,16 @@ createApp({
         this.contacts[index].messages.push(newReply);
       }, 1000);
     },
-
+    
+    searchContact(){
+      this.contacts.forEach(contact => {
+        if(!contact.name.toLowerCase().includes(this.searchString.toLowerCase())){
+          contact.visible = false;
+        }else{
+          contact.visible = true;
+        }
+      })
+    }
     
     
   },

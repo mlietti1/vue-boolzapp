@@ -39,7 +39,7 @@
         <div class="search-icon">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <input v-model="searchString" type="text" placeholder="Cerca o inizia una nuova chat" name="search" id="search">
+        <input @keyup="searchContact()" v-model="searchString" type="text" placeholder="Cerca o inizia una nuova chat" name="search" id="search">
       </div>
       <div class="chats-container">
         <div @click="chatCounter = index" :class="{'active': index === chatCounter}" v-show="contact.visible" v-for="(contact, index) in contacts" class="chat-row">
