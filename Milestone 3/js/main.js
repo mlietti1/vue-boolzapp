@@ -185,6 +185,14 @@ createApp({
       }
       this.contacts[index].messages.push(newMsg);
       this.newMsgString = '';
+      this.autoreply = setTimeout(() => {
+        const newReply = {
+          date: '',
+          message: 'Ok!',
+          status: 'received'
+        }
+        this.contacts[index].messages.push(newReply);
+      }, 1000);
     }
   },
   mounted(){
