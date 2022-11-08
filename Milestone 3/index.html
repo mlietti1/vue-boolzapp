@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css' integrity='sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==' crossorigin='anonymous'/>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Boolzapp</title>
+</head>
+<body>
+
+  <div id="app" class="container">
+    <div class="chat-menu">
+      <div class="header">
+        <div class="user-info">
+          <img class="avatar" :src="'img/avatar' + user.avatar + '.jpg'" :alt="user.name">
+          <span>{{user.name}}</span>
+        </div>
+        <div class="user-menu">
+          <i class="fa-solid fa-circle-notch"></i>
+          <i class="fa-solid fa-message"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+      </div>
+      <div class="notification">
+        <div class="avatar">
+          <i class="fa-solid fa-bell-slash"></i>
+        </div>
+        <div class="notification-text">
+          <p>Ricevi notifiche di nuovi messaggi</p>
+          <a href="#">Attiva notifiche desktop</a>
+        </div>
+      </div>
+      <div class="searchbar">
+        <div class="search-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <input type="text" placeholder="Cerca o inizia una nuova chat" name="search" id="search">
+      </div>
+      <div class="chats-container">
+        <div @click="chatCounter = index" :class="{'active': index === chatCounter}" v-for="(contact, index) in contacts" class="chat-row">
+          <img class="avatar" :src="'img/avatar' + contact.avatar + '.jpg'" alt="contact.name">
+          <div class="chat-info">
+            <span>{{contact.name}}</span>
+            <span class="msg-preview">Ultimo messaggio inviato</span>
+          </div>
+          <div class="chat-time">12:00</div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="conversation">
+      <div class="header">
+        <div class="user-info">
+          <img class="avatar" :src="'img/avatar' + contacts[chatCounter].avatar + '.jpg'" :alt="contacts[chatCounter].name">
+          <div class="conversation-info">
+            <span>{{contacts[chatCounter].name}}</span>
+            <span class="last-seen">Ultimo accesso oggi alle 12:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="convo-container">
+        <div v-for="(text, index) in contacts[chatCounter].messages" :class="{'justify-end': text.status == 'sent'}" class="msg-row">
+          <div :class="{'sent': text.status == 'sent'}" class="msg-box">
+            <p>{{text.message}}</p>
+            <span class="msg-time">12:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input">
+        <div><i class="fa-regular fa-face-smile"></i></div>
+        <input @keyup.enter="createNewMsg(chatCounter)" v-model.trim="newMsgString" placeholder="Scrivi un messaggio" type="text" name="" id="">
+        <div><i class="fa-solid fa-microphone"></i></div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
