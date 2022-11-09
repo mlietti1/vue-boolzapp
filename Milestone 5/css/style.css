@@ -207,6 +207,30 @@ background-color: rgba(0, 0, 0, 0.03);
   position: relative;
 }
 
+.msg-box .toggle-menu {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #6B7377;
+  color: white;
+  border: 2px solid #e9ebeb;
+  border-radius: 7px;
+  padding: 0 10px;
+}
+
+.toggle-menu ul {
+  list-style: none;
+}
+
+.toggle-menu ul li {
+  margin: 7px 0;
+  cursor: pointer;
+}
+
+.toggle-menu .delete-msg:active {
+  color: #b1b1b1;
+}
+
 .msg-box .chevron {
   position: absolute;
   display: none;

@@ -66,11 +66,16 @@
       </div>
       <div id="chat" class="convo-container">
         <div v-for="(text, index) in contacts[chatCounter].messages" :class="{'justify-end': text.status == 'sent'}" class="msg-row">
-          <div :class="{'sent': text.status == 'sent'}" class="msg-box">
+          <div  @mouseleave="text.toggleShow = false" :class="{'sent': text.status == 'sent'}" class="msg-box">
             <p>{{text.message}}</p>
             <span class="msg-time">{{text.date}}</span>
-            <span @click="toggleMenu(index)" class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-            <div v-show="text.toggleShow" class="toggle-menu">aaa</div>
+            <span @click="toggleMenu(chatCounter, index)" class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+            <div v-show="text.toggleShow" class="toggle-menu">
+              <ul>
+                <li>Info messaggio</li>
+                <li class="delete-msg">Cancella messaggio</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

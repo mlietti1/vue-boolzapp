@@ -267,16 +267,11 @@ createApp({
       return currentTime;
     },
 
-    toggleMenu(i){
+    toggleMenu(i, index){
 
-      this.contacts.forEach(contact => {
-        
-        contact.messages[i].toggleShow = !contact.messages[i].toggleShow;
-        
-      });
+      this.contacts[i].messages[index].toggleShow = !this.contacts[i].messages[index].toggleShow;
 
     }
-    
     
   },
   mounted(){
