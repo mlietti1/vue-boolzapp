@@ -235,7 +235,7 @@ background-color: rgba(0, 0, 0, 0.03);
 
 .msg-time {
   position: absolute;
-  bottom: 5px;
+  bottom: 3px;
   right: 5px;
   font-size: 0.6rem;
 }
