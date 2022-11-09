@@ -60,7 +60,7 @@
           <img class="avatar" :src="'img/avatar' + contacts[chatCounter].avatar + '.jpg'" :alt="contacts[chatCounter].name">
           <div class="conversation-info">
             <span>{{contacts[chatCounter].name}}</span>
-            <span class="last-seen">Ultimo accesso oggi alle 12:00</span>
+            <span class="last-seen">Ultimo accesso: {{getTime()}}</span>
           </div>
         </div>
       </div>

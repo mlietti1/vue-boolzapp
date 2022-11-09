@@ -8,6 +8,7 @@ createApp({
       chatCounter: 0,
       newMsgString: '',
       searchString: '',
+      currentTime: '',
       user: 
       {
         name: 'Cristina',
@@ -181,8 +182,9 @@ createApp({
   },
   methods:{
     createNewMsg(index){
+      
       const newMsg = {
-        date: '',
+        date: this.getTime(),
         message: this.newMsgString,
         status: 'sent'
       }
@@ -194,8 +196,9 @@ createApp({
 
       this.newMsgString = '';
       this.autoreply = setTimeout(() => {
+      
         const newReply = {
-          date: '',
+          date: this.getTime(),
           message: 'Ok!',
           status: 'received'
         }
@@ -219,7 +222,13 @@ createApp({
 
     autoScroll(){
       const convoContainer = document.getElementById('chat');
-      convoContainer.scrollTop = convoContainer.scrollHeight;
+      return convoContainer.scrollTop = convoContainer.scrollHeight;
+    },
+
+    getTime() {
+      const now = DateTime.now();
+      const currentTime = now.toFormat("dd'/'MM'/'yyyy hh':'mm':'ss");
+      return currentTime;
     }
     
     
