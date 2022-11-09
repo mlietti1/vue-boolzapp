@@ -195,7 +195,7 @@ createApp({
       this.newMsgString = '';
       this.autoreply = setTimeout(() => {
         const newReply = {
-          date: ,
+          date: '',
           message: 'Ok!',
           status: 'received'
         }
