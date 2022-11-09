@@ -150,7 +150,11 @@ background-color: rgba(0, 0, 0, 0.03);
 } 
 
 .msg-preview {
+  width: 250px;
+  white-space: nowrap;
   line-height: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .chat-time {

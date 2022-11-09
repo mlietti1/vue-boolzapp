@@ -271,6 +271,10 @@ createApp({
 
       this.contacts[i].messages[index].toggleShow = !this.contacts[i].messages[index].toggleShow;
 
+    },
+
+    deleteMsg(i, index) {
+      this.contacts[i].messages.splice(index, 1);
     }
     
   },

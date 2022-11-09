@@ -47,9 +47,9 @@
           <img class="avatar" :src="'img/avatar' + contact.avatar + '.jpg'" alt="contact.name">
           <div class="chat-info">
             <span>{{contact.name}}</span>
-            <span class="msg-preview">Ultimo messaggio inviato</span>
+            <span v-if="contact.messages.length > 0" class="msg-preview">{{contact.messages[contact.messages.length - 1].message}}</span>
           </div>
-          <div class="chat-time">{{contact.messages[contact.messages.length - 1].date}}</div>
+          <div v-if="contact.messages.length > 0" class="chat-time">{{contact.messages[contact.messages.length - 1].date}}</div>
         </div>
       </div>
       
@@ -73,7 +73,7 @@
             <div v-show="text.toggleShow" class="toggle-menu">
               <ul>
                 <li>Info messaggio</li>
-                <li class="delete-msg">Cancella messaggio</li>
+                <li @click="deleteMsg(chatCounter, index)" class="delete-msg">Cancella messaggio</li>
               </ul>
             </div>
           </div>
