@@ -40,16 +40,20 @@
         <div class="search-icon">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <input @keyup="searchContact()" v-model="searchString" type="text" placeholder="Cerca o inizia una nuova chat" name="search" id="search">
+        <input  v-model="searchString" type="text" placeholder="Cerca o inizia una nuova chat" name="search" id="search">
       </div>
       <div class="chats-container">
-        <div @click="chatCounter = index" :class="{'active': index === chatCounter}" v-show="contact.visible" v-for="(contact, index) in contacts" class="chat-row">
+        <div @click="chatCounter = index" 
+        :class="{'active': index === chatCounter}" 
+        v-show="contact.name.toLowerCase().includes(searchString.toLowerCase())" 
+        v-for="(contact, index) in contacts" 
+        class="chat-row">
           <img class="avatar" :src="'img/avatar' + contact.avatar + '.jpg'" alt="contact.name">
           <div class="chat-info">
             <span>{{contact.name}}</span>
-            <span v-if="contact.messages.length > 0" class="msg-preview">{{contact.messages[contact.messages.length - 1].message}}</span>
+            <span v-if="contact.messages.length" class="msg-preview">{{contact.messages[contact.messages.length - 1].message}}</span>
           </div>
-          <div v-if="contact.messages.length > 0" class="chat-time">{{contact.messages[contact.messages.length - 1].date}}</div>
+          <div v-if="contact.messages.length" class="chat-time">{{contact.messages[contact.messages.length - 1].date}}</div>
         </div>
       </div>
       

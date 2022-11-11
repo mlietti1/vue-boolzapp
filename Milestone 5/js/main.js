@@ -242,15 +242,15 @@ createApp({
 
     // funzione per mostrare i contatti trovati nel menu a sx, richiamo ogni volta che digito
     
-    searchContact(){
-      this.contacts.forEach(contact => {
-        if(!contact.name.toLowerCase().includes(this.searchString.toLowerCase())){
-          contact.visible = false;
-        }else{
-          contact.visible = true;
-        }
-      })
-    },
+    // searchContact(){
+    //   this.contacts.forEach(contact => {
+    //     if(!contact.name.toLowerCase().includes(this.searchString.toLowerCase())){
+    //       contact.visible = false;
+    //     }else{
+    //       contact.visible = true;
+    //     }
+    //   })
+    // },
 
     // funzione da richiamare per autoscroll della chat ogni volta che si aggiunge un messaggio
 
